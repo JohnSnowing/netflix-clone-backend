@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoute = require("./routes/auth");
 const userRouter = require("./routes/users");
+const movieRouter = require("./routes/movies");
+const listRouter = require("./routes/list");
 
 dotenv.config();
 //to enable env
@@ -22,6 +24,8 @@ app.use(express.json());
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRouter);
+app.use("/api/movies", movieRouter);
+app.use("/api/lists", listRouter);
 // put all the  main routes here
 
 app.listen(8800, () => {
